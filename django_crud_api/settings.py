@@ -78,26 +78,26 @@ WSGI_APPLICATION = 'django_crud_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# settings.py
-import os
-import dj_database_url
-import dotenv
-
-# Cargar las variables de entorno desde el archivo .env
-dotenv.load_dotenv()
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('postgresql://postgres:UDJLTlYvGNULwSexdrVbXVMSryTQATGf@junction.proxy.rlwy.net:49770/railway')  # Railway expone DATABASE_URL automáticamente.
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# # settings.py
+# import os
+# import dj_database_url
+# import dotenv
+
+# # Cargar las variables de entorno desde el archivo .env
+# dotenv.load_dotenv()
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.getenv('postgresql://postgres:UEOVtYNZdOHzStwFTkCVwyPjSIVelVQK@postgres.railway.internal:5432/railway')  # Railway expone DATABASE_URL automáticamente.
+#     )
+# }
 
 
 
